@@ -1,0 +1,140 @@
+{
+  "rasa_nlu_data": {
+    "regex_features": [
+      {
+        "name": "greet",
+        "pattern": "Hi[^\\s]*"
+      }
+    ],
+    "entity_synonyms": [
+      {
+        "value": "Service",
+        "synonyms": ["Service", "service", "svc", "microservice"]
+      },
+      {
+        "value": "Application",
+        "synonyms": ["Application", "application", "app"]
+      }
+    ],
+    "common_examples": [
+      {
+        "text": "hey", 
+        "intent": "greet", 
+        "entities": []
+      },
+      {
+        "text": "hi", 
+        "intent": "greet", 
+        "entities": []
+      },
+      {
+        "text": "Please restart login service",
+        "intent": "restartService",
+        "entities": [
+          {
+            "start": 15,
+            "end": 20,
+            "value": "Login",
+            "entity": "ServiceName"
+          },
+          {
+            "start": 21,
+            "end": 28,
+            "value": "Service",
+            "entity": "Process"
+          }
+        ]
+      },
+      {
+        "text": "Please restart order service",
+        "intent": "restartService",
+        "entities": [
+          {
+            "start": 15,
+            "end": 20,
+            "value": "Order",
+            "entity": "ServiceName"
+          },
+          {
+            "start": 21,
+            "end": 28,
+            "value": "Service",
+            "entity": "Process"
+          }
+        ]
+      },
+      {
+        "text": "what is the status of login service",
+        "intent": "serviceStatus",
+        "entities": [
+          {
+            "start": 22,
+            "end": 27,
+            "value": "Login",
+            "entity": "ServiceName"
+          },
+          {
+            "start": 28,
+            "end": 35,
+            "value": "Service",
+            "entity": "Process"
+          }
+        ]
+      },
+      {
+        "text": "what is the status of order service",
+        "intent": "serviceStatus",
+        "entities": [
+          {
+            "start": 22,
+            "end": 27,
+            "value": "Order",
+            "entity": "ServiceName"
+          },
+          {
+            "start": 28,
+            "end": 35,
+            "value": "Service",
+            "entity": "Process"
+          }
+        ]
+      },
+      {
+        "text": "Please restart master application",
+        "intent": "restartApp",
+        "entities": [
+          {
+            "start": 15,
+            "end": 21,
+            "value": "Master",
+            "entity": "ApplicationName"
+          },
+          {
+            "start": 22,
+            "end": 33,
+            "value": "Application",
+            "entity": "Process"
+          }
+        ]
+      },
+      {
+        "text": "Please restart database application",
+        "intent": "restartApp",
+        "entities": [
+          {
+            "start": 15,
+            "end": 23,
+            "value": "Database",
+            "entity": "ApplicationName"
+          },
+          {
+            "start": 24,
+            "end": 35,
+            "value": "Application",
+            "entity": "Process"
+          }
+        ]
+      }
+    ]
+  }
+}
